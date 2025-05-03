@@ -2,7 +2,7 @@
   <div class="game-member">
     <h4 class="game-member__name">
       <span class="game-member__rank">{{ getRankSuffix(member.rank) }}</span>
-      <span class="game-member__username">{{ ` ${member.username}` }}</span>
+      <span class="game-member__username">{{ ` - ${member.username}` }}</span>
     </h4>
     <div class="game-member__info">
       <div class="game-member__level">
@@ -12,9 +12,15 @@
           <span class="game-member__experience-number">EXP: {{ getFormattedNumber(member.xp) }}</span>
           </div>
       </div>
-      <div class="game-member__gold">
-        <Gold class="game-member__gold-icon" />
-        <span class="game-member__gold-text game-member__info-text">{{ getFormattedNumber(member.gold) }}</span>
+      <div class="gold-member__budget">
+        <div class="game-member__gold">
+          <Gold class="game-member__gold-icon" />
+          <span class="game-member__gold-text game-member__info-text">{{ getFormattedNumber(member.gold) }}</span>
+        </div>
+        <div class="game-member__fish-bag">
+          <Fish class="game-member__fish-bag-icon" />
+          <span class="game-member__fish-text game-member__info-text">{{ member.fishEmojis }}</span>
+        </div>
       </div>
       <div class="game-member__status">
         <Biohazard class="game-member__status-icon" :class="{'game-member__status-icon--infected' : member.isInfected}" />
@@ -27,6 +33,7 @@
 <script setup lang="ts">
 import Gold from '../../assets/icons/Gold.vue'
 import Biohazard from '../../assets/icons/Biohazard.vue'
+import Fish from '../../assets/icons/Fish.vue'
 import type { GameMemberType } from '../../types'
 import { ref, onMounted } from 'vue'
 import getFormattedNumber from '../../utils/NumberFormatter'
@@ -62,3 +69,5 @@ onMounted(() =>{
 <style lang="scss" scoped>
 @use './gameMember.scss' as *;
 </style>
+
+

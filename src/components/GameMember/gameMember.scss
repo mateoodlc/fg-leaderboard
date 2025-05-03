@@ -94,20 +94,7 @@
     color: white;
   }
 
-  &__gold {
-    display: flex;
-    align-items: center;
-    font-size: 1rem;
-    margin-top: 0.5rem;
-    gap: 1rem;
-
-    &-icon {
-      width: 2rem;
-      height: 2rem;
-      fill: $yellow-gold;
-    }
-  }
-
+  &__fish-bag,
   &__status,
   &__gold {
     display: flex;

@@ -5,5 +5,5 @@ export type GameMemberType = {
   xp: number
   gold: number
   isInfected: boolean
-  fishBag: string
+  emojiDescription: string
 }

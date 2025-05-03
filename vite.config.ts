@@ -6,7 +6,7 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   plugins: [vue(), VitePWA({
     registerType: 'prompt',
-    injectRegister: false,
+    injectRegister: 'auto',
 
     pwaAssets: {
       disabled: false,
