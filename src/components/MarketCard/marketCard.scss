@@ -1,0 +1,56 @@
+@use '../../styles/variables.scss' as *;
+.market-card {
+  position: relative;
+  display: flex;
+  background-color: $main-background;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem 0.4rem rgba($primary-color, 0.4);
+  padding: 2rem;
+  height: 100%;
+
+  &__icon-holder {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+
+    .icon {
+      width: 100%;
+      height: 100%;
+
+      &:deep svg {
+        opacity: 0.2;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__info-price {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__description {
+    font-size: 1.8rem;
+    text-align: left;
+    line-height: 1.5;
+    max-width: 30rem;
+  }
+}
