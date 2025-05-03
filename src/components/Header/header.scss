@@ -1,0 +1,82 @@
+@use '../../styles/variables.scss' as *;
+.header {
+  &__title {
+    margin-bottom: 4rem;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 4rem;
+  }
+
+  &__tabs {
+    display: flex;
+    gap: 2rem;
+  }
+
+  &__tabs-link {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding: 0;
+    border-radius: 8px;
+    transition: color 0.3s;
+    color: white;
+
+    &::after {
+      content: '';
+      display: block;
+      width: 3rem;
+      height: 2px;
+      background-color: $primary-color;
+      transform: scaleX(0);
+      transition: transform 0.3s;
+      transform-origin: left;
+    }
+
+    &.router-link-active {
+      color: $primary-color;
+
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+
+    &:hover {
+      color: $primary-color;
+
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  &__refresh-button {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    color: white;
+    font-size: 2rem;
+    transition: color 0.3s;
+
+    &:hover {
+      .header__refresh-icon {
+        fill: $primary-color;
+      }
+    }
+  }
+
+  &__last-updated {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+  }
+}
