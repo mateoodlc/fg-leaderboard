@@ -15,7 +15,6 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue';
 import type { MarketItemType } from '../../types';
 import Gold from '../../assets/icons/Gold.vue';
 import MarketIcon from '../../assets/icons/MarketIcon.vue';

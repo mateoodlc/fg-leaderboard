@@ -25,7 +25,6 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps } from 'vue';
 import Badge from './Badge.vue';
 import Cup from './Cup.vue';
 import Gold from './Gold.vue';

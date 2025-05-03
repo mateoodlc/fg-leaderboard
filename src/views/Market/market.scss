@@ -1,8 +1,12 @@
 .market {
   &__list {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     gap: 3rem;
     margin-top: 3rem;
+
+    @media (min-width: 1200px) {
+      grid-template-columns: repeat(auto-fit, minmax(40rem, 1fr));
+    }
   }
 }
