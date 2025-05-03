@@ -1,0 +1,141 @@
+@use '../../styles/variables.scss' as *;
+.game-member {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-radius: 8px;
+  padding: 1.5rem;
+
+  &__info,
+  &__level {
+    display: flex;
+  }
+
+  &__info {
+    flex-direction: column;
+    gap: 0.5rem;
+    width: 100%;
+    font-size: 1rem;
+
+    &-text {
+      font-size: 1.6rem;
+    }
+  }
+
+  &__level {
+    align-items: center;
+    color: $green-exp;
+  }
+
+  &__level-number{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+    border-radius: 50%;
+    z-index: 2;
+
+    &::before {
+      content: '';
+      position: absolute;
+      flex-shrink: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      border: 0.1rem solid rgba(76, 175, 80, 1);
+      z-index: -1;
+    }
+  }
+
+  &__experience {
+    position: relative;
+    width: 100%;
+    height: 2.5rem;
+    margin-left: 1rem;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(76, 175, 80, 0.2);
+      border-radius: 5px;
+    }
+  }
+
+  &__experience-bar {
+    display: block;
+    position: absolute;
+    left: 0;
+    background-color: $green-exp;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: transform 3s ease;
+    transform-origin: left;
+    will-change: transform;
+    z-index: -1;
+  }
+
+  &__experience-number {
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    color: white;
+  }
+
+  &__gold {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    gap: 1rem;
+
+    &-icon {
+      width: 2rem;
+      height: 2rem;
+      fill: $yellow-gold;
+    }
+  }
+
+  &__status,
+  &__gold {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    gap: 1rem;
+
+    &-icon {
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+
+  &__status-text {
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  &__status-icon {
+    fill: $green-exp;
+    opacity: 0.2;
+    
+    &--infected {
+      opacity: 1;
+      fill: $red-infection;
+    }
+  }
+}

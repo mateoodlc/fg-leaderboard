@@ -1,0 +1,47 @@
+@use '../../styles/variables.scss' as *;
+.game-member__list {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  &--top {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid $gray-silver;
+  }
+
+  &-item {
+    position: relative;
+    border-radius: 1rem;
+    flex: 1;
+    box-shadow: 0 0 1rem 0.2rem rgba($primary-color, 0.2);
+    min-width: 30rem;
+
+    .game-member__list--top & {
+      &:nth-child(1) {
+        box-shadow: 0 0 1rem 0.4rem rgba($yellow-gold, 0.4);
+      }
+      &:nth-child(2) {
+        box-shadow: 0 0 1rem 0.4rem rgba($gray-silver, 0.4);
+      }
+      &:nth-child(3) {
+        box-shadow: 0 0 1rem 0.4rem rgba($brown-bronze, 0.4);
+      }
+    }
+  }
+
+  &-item-badge {
+    position: absolute;
+    top: -1.5rem;
+    right: -1.5rem;
+    font-size: 6rem;
+    transform: rotate(20deg);
+  }
+
+  &-subtitle {
+    margin-bottom: 1rem;
+  }
+}
